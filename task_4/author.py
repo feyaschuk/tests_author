@@ -1,3 +1,6 @@
+import sys
+sys.stdout = open('output.txt', 'w')
+
 def make_divider_of(divider):
     def division_operation(divisible):
         return divisible / divider
@@ -16,3 +19,4 @@ print(div5(20))
 
 print(div5(div2(20)))
 # Выведет: 2.0
+
