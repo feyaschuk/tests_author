@@ -1,6 +1,5 @@
 import time
 
-
 def time_check(func):
     def wrapper(*args):
         start_time = time.time()

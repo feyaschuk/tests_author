@@ -13,6 +13,7 @@ def time_check(func):
 
 
 def cache_args(func):
+    pass
 
 
 # Здесь код декоратора
