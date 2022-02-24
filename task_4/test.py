@@ -1,7 +1,17 @@
-from author import make_divider_of
 import pytest
 import sys
+import subprocess
 
+from author import make_divider_of
+
+''' раскомментировать для проверки precode.py, сейчас проверяет author.py '''
+#from precode import make_divider_of
+
+#cmd= "python precode.py"
+cmd = 'python author.py'
+p = subprocess.Popen(cmd, stdout = open('output.txt', 'w'))
+
+"""Запись кода студента в файл usercode.txt"""
 f_in = open('precode.py', 'r') 
 data = f_in.read()
 f_out = open('usercode.txt', 'w')
@@ -28,16 +38,17 @@ def div5():
 def test_errors_raises():
     """Убедитесь, что файл precode.py импортируется без ошибок."""
     try: 
-        import precode   
+        import author  
     except: 
         e = sys.exc_info()[1]
         assert e.args[0] == None
 
-def test_wrong_type(div2):
+
+def test_wrong_type(div2, div5):
     """ Должно возникнуть исключение с неправильным типом param."""
     with pytest.raises(TypeError):
         div2('abc')
-
+        div5('abc')
 
 def test_div2(div2):  
     """ Проверка результата div2 """   

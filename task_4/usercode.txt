@@ -1,6 +1,6 @@
-import abcdfr
 def make_divider_of(divider):
     def division_operation(divisible):
+        
         # Ваш код здесь
 
 
